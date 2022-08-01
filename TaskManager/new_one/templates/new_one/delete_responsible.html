@@ -1,0 +1,10 @@
+<form method="post">
+    <p>Выберите строку для удаления: <select name="task">
+        {% for task in Tasks %}
+        <option value={{ task.id }}>{{ task.task }} {{ task.responsible_person }}</option>
+        {% endfor %}
+    </select>
+    </p>
+    <p><input type="submit" value="Удалить"></p>
+    {% csrf_token %}
+</form>

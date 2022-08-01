@@ -1,0 +1,10 @@
+<form method="post">
+    <p>Задача: <select name="select">
+        {% for task in Tasks %}
+        <option value={{ task.id }}>{{ task.task }}</option>
+        {% endfor %}
+    </select>
+    </p>
+    <p><input type="submit" value="Удалить задачу"></p>
+    {% csrf_token %}
+</form>

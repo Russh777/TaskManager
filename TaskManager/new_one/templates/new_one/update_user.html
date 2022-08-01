@@ -1,0 +1,11 @@
+<form method="post">
+    <p>Выберите имя сотрудника: <select name="select">
+        {% for person in Persons %}
+        <option value={{ person.id }}>{{ person.name }}</option>
+        {% endfor %}
+    </select>
+    </p>
+    {% csrf_token %}
+    <p>Введите новое имя сотрудника: <input required type="text" name="name"></p>
+    <p><input type="submit" value="Обновить сотрудника"></p>
+</form>

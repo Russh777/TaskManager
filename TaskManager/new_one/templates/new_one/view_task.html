@@ -1,0 +1,91 @@
+<head>
+<script>
+setTimeout(function(){
+    location.reload();
+}, 5000);
+</script>
+</head>
+
+ <style>
+   table {
+    width: 400px; /* Ширина таблицы */
+    border: 1px solid green; /* Рамка вокруг таблицы */
+    margin-top: 5;
+    margin-left: 5;
+    float: left;
+   }
+   td {
+    background: #CCFFCC;
+    text-align: center; /* Выравниваем текст по центру ячейки */
+   }
+   th {
+    background: #CCFFFF;
+   }
+   caption {
+    font-size: 20pt; /* Размер текста названия таблиц */
+   }
+   button {
+    display: inline-block;
+
+   }
+
+  </style>
+<!--{% if user.is_authenticated %}-->
+
+<table border="4">
+  <caption>
+    Задачи и ответственные
+  </caption>
+  <tr>
+    <th>Задача</th>
+    <th>Ответственный</th>
+    <th>Комментарии</th>
+  </tr>
+  {% for task in TasksToPersons %}
+  <tr>
+    <td>{{ task.task }}</td><td>{{ task.responsible_person }}</td> <td>{{ task.comment }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<table border="4">
+  <caption>
+    Список задач
+  </caption>
+  <tr>
+    <th>Задача</th>
+    <th>Дата начала</th>
+    <th>Срок</th>
+  </tr>
+  {% for task in Tasks %}
+  <tr>
+    <td>{{ task.task }}</td><td>{{ task.startdate }}</td><td>{{ task.deadline }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<table border="4">
+  <caption>
+    Список сотрудников
+  </caption>
+  <tr>
+    <th>Имя сотрудника</th>
+  </tr>
+  {% for person in Persons %}
+  <tr>
+    <td>{{ person.name }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<a href="http://127.0.0.1:8000/taskmanager/createuser"><button>Добавить сотрудника</button></a>
+<a href="http://127.0.0.1:8000/taskmanager/deleteuser"><button>Удалить сотрудника</button></a>
+<a href="http://127.0.0.1:8000/taskmanager/updateuser"><button>Обновить сотрудника</button></a>
+<a href="http://127.0.0.1:8000/taskmanager/createtask"><button>Добавить задачу</button></a>
+<a href="http://127.0.0.1:8000/taskmanager/deletetask"><button>Удалить задачу</button></a>
+<a href="http://127.0.0.1:8000/taskmanager/updatetask"><button>Обновить задачу</button></a>
+<a href="http://127.0.0.1:8000/taskmanager/createresponsible"><button>Назначить ответственного</button></a>
+<a href="http://127.0.0.1:8000/taskmanager/deleteresponsible"><button>Удалить ответственного</button></a>
+
+<!--{% endif %}-->

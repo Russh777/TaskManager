@@ -1,0 +1,17 @@
+<form method="post">
+    <p>Выберите задачу: <select name="task">
+        {% for task in Tasks %}
+        <option value={{ task.id }}>{{ task.task }}</option>
+        {% endfor %}
+    </select>
+    </p>
+    <p>Выберите ответственного: <select name="responsible_person">
+        {% for person in Persons %}
+        <option value={{ person.id }}>{{ person.name }}</option>
+        {% endfor %}
+    </select>
+    </p>
+    <p>Комментарий (при наличии): <input type="text" name="comment"></p>
+    <p><input type="submit" value="Назначить ответственного"></p>
+    {% csrf_token %}
+</form>

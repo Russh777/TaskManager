@@ -1,0 +1,11 @@
+<form method="post">
+    <p>Имя сотрудника: <select name="select">
+        {% for person in Persons %}
+        <option value={{ person.id }}>{{ person.name }}</option>
+        {% endfor %}
+    </select>
+    </p>
+    <p><input type="submit" value="Удалить пользователя"></p>
+    {% csrf_token %}
+</form>
+
