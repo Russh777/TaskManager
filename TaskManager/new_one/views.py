@@ -5,6 +5,9 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import TasksToPersons,Persons,Tasks
 from .forms import CreateUserForm, CreateTaskForm, CreateResponsible, LoginForm
 from django.contrib.auth import authenticate, login
+import logging
+
+logger = logging.getLogger(__name__)
 
 class TasksView(generic.ListView):
     def get(self, request):
@@ -17,6 +20,7 @@ def newUsers(request):
         return render(request, 'new_one/create_user.html')
     elif request.method == "POST":
         CreateUserForm(request.POST).save()
+        logger.info('User added: ' + request.POST.get('name'))
         return redirect('http://127.0.0.1:8000/taskmanager/taskview')
 
 def updateUser(request):
@@ -24,8 +28,12 @@ def updateUser(request):
         return render(request, 'new_one/update_user.html', {'Persons': Persons.objects.all()})
     elif request.method == "POST":
         update = Persons.objects.get(id=request.POST.get('select'))
+        info = str(Persons.objects.get(id=request.POST.get('select')))
         update.name = request.POST.get('name')
         update.save()
+        logger.info('User updated: ' +
+                    info + ' on ' +
+                    request.POST.get('name'))
         return redirect('http://127.0.0.1:8000/taskmanager/taskview')
 
 def deleteUser(request):
@@ -33,7 +41,9 @@ def deleteUser(request):
         return render(request, 'new_one/delete_user.html', {'Persons': Persons.objects.all()})
     elif request.method == "POST":
         d = Persons.objects.get(id=request.POST.get('select'))
-        d.delete()  # Удалить пост из БД
+        info = str(Persons.objects.get(id=request.POST.get('select')))
+        d.delete()
+        logger.info('User deleted: ' + info)
         return redirect('http://127.0.0.1:8000/taskmanager/taskview')
 
 @csrf_exempt
@@ -42,6 +52,7 @@ def newTasks(request):
         return render(request, 'new_one/create_task.html')
     elif request.method == "POST":
         CreateTaskForm(request.POST).save()
+        logger.info('User added new task: ' + request.POST.get('task'))
         return redirect('http://127.0.0.1:8000/taskmanager/taskview')
 
 def deleteTask(request):
@@ -49,7 +60,9 @@ def deleteTask(request):
         return render(request, 'new_one/delete_task.html', {'Tasks': Tasks.objects.all()})
     elif request.method == "POST":
         d = Tasks.objects.get(id=request.POST.get('select'))
-        d.delete()  # Удалить пост из БД
+        info = str(Tasks.objects.get(id=request.POST.get('select')))
+        d.delete()
+        logger.info('User deleted: ' + info)
         return redirect('http://127.0.0.1:8000/taskmanager/taskview')
 
 def updateTask(request):
@@ -57,10 +70,14 @@ def updateTask(request):
         return render(request, 'new_one/update_task.html', {'Tasks': Tasks.objects.all()})
     elif request.method == "POST":
         update = Tasks.objects.get(id=request.POST.get('select'))
+        info = str(Tasks.objects.get(id=request.POST.get('select')))
         update.task = request.POST.get('task')
         update.startdate = request.POST.get('startdate')
         update.deadline = request.POST.get('deadline')
         update.save()
+        logger.info('User updated: ' +
+                    info + ' on ' +
+                    request.POST.get('task'))
         return redirect('http://127.0.0.1:8000/taskmanager/taskview')
 
 def newResponsible(request):

@@ -1,0 +1,104 @@
+2022-08-04 10:58:03,716 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:05:38,529 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:05:48,922 new_one.views INFO     info
+2022-08-04 11:05:48,923 new_one.views DEBUG    debug
+2022-08-04 11:05:48,923 new_one.views WARNING  warning
+2022-08-04 11:05:48,923 new_one.views ERROR    error
+2022-08-04 11:05:53,566 new_one.views INFO     info
+2022-08-04 11:05:53,567 new_one.views DEBUG    debug
+2022-08-04 11:05:53,567 new_one.views WARNING  warning
+2022-08-04 11:05:53,567 new_one.views ERROR    error
+2022-08-04 11:08:11,890 django.utils.autoreload INFO     C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\TaskManager\new_one\views.py changed, reloading.
+2022-08-04 11:08:12,738 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:31:08,849 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:31:14,297 new_one.views INFO     GET method called
+2022-08-04 11:31:16,407 new_one.views INFO     GET method called
+2022-08-04 11:31:19,600 django.request ERROR    Internal Server Error: /taskmanager/createuser
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\TaskManager\new_one\views.py", line 24, in newUsers
+    logger.info('POST method called'+request.POST)
+TypeError: can only concatenate str (not "QueryDict") to str
+2022-08-04 11:31:50,694 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:31:54,527 new_one.views INFO     POST method called<QueryDict: {'name': ['Petr Ivanov']}>
+2022-08-04 11:31:54,613 new_one.views INFO     GET method called
+2022-08-04 11:32:00,306 new_one.views INFO     GET method called
+2022-08-04 11:32:06,306 new_one.views INFO     GET method called
+2022-08-04 11:32:12,301 new_one.views INFO     GET method called
+2022-08-04 11:32:18,291 new_one.views INFO     GET method called
+2022-08-04 11:32:24,306 new_one.views INFO     GET method called
+2022-08-04 11:32:30,299 new_one.views INFO     GET method called
+2022-08-04 11:32:36,309 new_one.views INFO     GET method called
+2022-08-04 11:32:42,293 new_one.views INFO     GET method called
+2022-08-04 11:32:48,301 new_one.views INFO     GET method called
+2022-08-04 11:32:54,308 new_one.views INFO     GET method called
+2022-08-04 11:33:00,311 new_one.views INFO     GET method called
+2022-08-04 11:33:06,298 new_one.views INFO     GET method called
+2022-08-04 11:33:11,868 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:33:12,306 new_one.views INFO     GET method called
+2022-08-04 11:33:14,643 new_one.views INFO     GET method called
+2022-08-04 11:33:16,681 new_one.views INFO     POST method called. User added: Ivan Petrov
+2022-08-04 11:33:16,767 new_one.views INFO     GET method called
+2022-08-04 11:33:22,295 new_one.views INFO     GET method called
+2022-08-04 11:33:28,303 new_one.views INFO     GET method called
+2022-08-04 11:34:41,302 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:34:44,025 new_one.views INFO     GET method called
+2022-08-04 11:34:54,985 new_one.views INFO     POST method called. User updated: 40on Petr Ivanov
+2022-08-04 11:34:54,996 new_one.views INFO     GET method called
+2022-08-04 11:35:00,295 new_one.views INFO     GET method called
+2022-08-04 11:35:06,299 new_one.views INFO     GET method called
+2022-08-04 11:35:11,410 new_one.views INFO     GET method called
+2022-08-04 11:36:49,228 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:36:52,481 new_one.views INFO     GET method called
+2022-08-04 11:36:55,630 new_one.views INFO     GET method called
+2022-08-04 11:36:58,792 new_one.views INFO     GET method called
+2022-08-04 11:37:04,741 django.request ERROR    Internal Server Error: /taskmanager/updateuser
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\TaskManager\new_one\views.py", line 34, in updateUser
+    logger.info('POST method called. User updated: ' +
+TypeError: can only concatenate str (not "Persons") to str
+2022-08-04 11:41:55,344 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:42:03,024 new_one.views INFO     POST method called. User updated: Petr Ivanov on Petr Ivanov
+2022-08-04 11:42:03,034 new_one.views INFO     GET method called
+2022-08-04 11:42:08,311 new_one.views INFO     GET method called
+2022-08-04 11:42:14,302 new_one.views INFO     GET method called
+2022-08-04 11:42:20,301 new_one.views INFO     GET method called
+2022-08-04 11:42:25,406 new_one.views INFO     GET method called
+2022-08-04 11:42:31,955 new_one.views INFO     POST method called. User updated: Ivan Petrov on Ivan Petrov
+2022-08-04 11:42:31,961 new_one.views INFO     GET method called
+2022-08-04 11:42:37,311 new_one.views INFO     GET method called
+2022-08-04 11:42:43,298 new_one.views INFO     GET method called
+2022-08-04 11:42:49,307 new_one.views INFO     GET method called
+2022-08-04 11:42:55,297 new_one.views INFO     GET method called
+2022-08-04 11:43:01,299 new_one.views INFO     GET method called
+2022-08-04 11:43:07,303 new_one.views INFO     GET method called
+2022-08-04 11:43:13,324 new_one.views INFO     GET method called
+2022-08-04 11:43:19,301 new_one.views INFO     GET method called
+2022-08-04 11:43:25,304 new_one.views INFO     GET method called
+2022-08-04 11:43:31,304 new_one.views INFO     GET method called
+2022-08-04 11:43:36,340 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:43:37,315 new_one.views INFO     GET method called
+2022-08-04 11:43:42,899 new_one.views INFO     POST method called. User updated: Ivan Petrov on Petr Ivanov
+2022-08-04 11:43:42,909 new_one.views INFO     GET method called
+2022-08-04 11:43:48,307 new_one.views INFO     GET method called
+2022-08-04 11:43:54,305 new_one.views INFO     GET method called
+2022-08-04 11:44:00,299 new_one.views INFO     GET method called
+2022-08-04 11:44:06,296 new_one.views INFO     GET method called
+2022-08-04 11:44:13,228 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:49:54,536 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:50:07,203 new_one.views INFO     User deleted: Petr Ivanov
+2022-08-04 11:50:11,312 new_one.views INFO     User added: Petr Ivanov
+2022-08-04 11:50:17,917 new_one.views INFO     User updated: Ivan Petrov on Petr Ivanov
+2022-08-04 11:50:22,662 new_one.views INFO     User deleted: Petr Ivanov
+2022-08-04 11:50:37,054 new_one.views INFO     User added new task: Task1
+2022-08-04 11:50:43,923 new_one.views INFO     User deleted: Task1
+2022-08-04 11:50:52,187 new_one.views INFO     User updated: Task1 on Task1
