@@ -85,11 +85,14 @@ def newResponsible(request):
         return render(request, 'new_one/create_responsible.html', {'Persons': Persons.objects.all(),
                                                           'Tasks': Tasks.objects.all()})
     elif request.method == "POST":
+        info_task = str(Tasks.objects.get(id=request.POST.get('task')))
+        info_person = str(Persons.objects.get(id=request.POST.get('responsible_person')))
         TasksToPersons(
             task = Tasks.objects.get(id=request.POST.get('task')),
             responsible_person = Persons.objects.get(id=request.POST.get('responsible_person')),
             comment = request.POST['comment']
         ).save()
+        logger.info('User assigned the ' + info_task + ' owner ' + info_person)
         return redirect('http://127.0.0.1:8000/taskmanager/taskview')
 
 def deleteResponsible(request):
@@ -97,7 +100,8 @@ def deleteResponsible(request):
         return render(request, 'new_one/delete_responsible.html', {'Tasks': TasksToPersons.objects.all()})
     elif request.method == "POST":
         d = TasksToPersons.objects.get(id=request.POST.get('task'))
-        d.delete()  # Удалить пост из БД
+        d.delete()
+        logger.info('User removed responsible from task')
         return redirect('http://127.0.0.1:8000/taskmanager/taskview')
 
 @csrf_exempt

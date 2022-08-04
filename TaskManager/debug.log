@@ -102,3 +102,10 @@ TypeError: can only concatenate str (not "Persons") to str
 2022-08-04 11:50:37,054 new_one.views INFO     User added new task: Task1
 2022-08-04 11:50:43,923 new_one.views INFO     User deleted: Task1
 2022-08-04 11:50:52,187 new_one.views INFO     User updated: Task1 on Task1
+2022-08-04 11:59:21,800 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 11:59:33,020 new_one.views INFO     User assigned the Task1 owner Petr Ivanov
+2022-08-04 11:59:36,599 new_one.views INFO     User assigned the Task1 owner Petr Ivanov
+2022-08-04 11:59:39,631 new_one.views INFO     User removed responsible from TasksToPersons object (32)
+2022-08-04 12:01:45,037 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 12:01:51,684 new_one.views INFO     User assigned the Task1 owner Petr Ivanov
+2022-08-04 12:01:54,723 new_one.views INFO     User removed responsible from task
