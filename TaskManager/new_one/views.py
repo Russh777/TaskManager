@@ -116,11 +116,14 @@ def user_login(request):
             user = authenticate(username=cd['username'], password=cd['password'])
             if user is not None:
                 if user.is_active:
-                    login(request, user)
+                    # login(request, user)
+                    logger.info('login successful ' + str(user))
                     return HttpResponseRedirect ('taskview')
                 else:
+                    logger.error('Disabled account')
                     return HttpResponse('Disabled account')
             else:
+                logger.error('Invalid login')
                 return HttpResponse('Invalid login')
     # else:
     #     form = LoginForm()

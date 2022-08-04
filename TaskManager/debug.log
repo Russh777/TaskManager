@@ -109,3 +109,26 @@ TypeError: can only concatenate str (not "Persons") to str
 2022-08-04 12:01:45,037 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2022-08-04 12:01:51,684 new_one.views INFO     User assigned the Task1 owner Petr Ivanov
 2022-08-04 12:01:54,723 new_one.views INFO     User removed responsible from task
+2022-08-04 13:39:36,428 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 13:39:43,222 new_one.views INFO     login successful None
+2022-08-04 13:40:10,243 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 13:40:13,121 django.request ERROR    Internal Server Error: /taskmanager/login
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Admin\Desktop\School\Innopolis\Russkikh_final_project\TaskManager\new_one\views.py", line 120, in user_login
+    logger.info('login successful ' + str(login(request)))
+TypeError: login() missing 1 required positional argument: 'user'
+2022-08-04 13:40:29,613 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 13:40:33,536 new_one.views INFO     login successful admin
+2022-08-04 13:40:51,747 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 13:40:55,935 new_one.views INFO     login successful admin
+2022-08-04 13:41:06,601 new_one.views INFO     User added: Petr Ivanov
+2022-08-04 13:41:09,652 new_one.views INFO     User deleted: Petr Ivanov
+2022-08-04 13:42:09,093 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-08-04 13:42:21,141 new_one.views ERROR    Invalid login
+2022-08-04 13:42:28,900 new_one.views INFO     login successful admin
